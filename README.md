@@ -8,3 +8,6 @@
   - PostgreSQL
 
 A decisão de utilizar Postgre como Banco de Dados se deve ao fato que o mesmo tem integração com a plataforma 'render.com', permitindo que o banco fique online.
+
+
+###### (ESTE DOCUMENTO ESRÁ ATUALIZADO CONFORME O ANDAMENTO DO PROJETO)
