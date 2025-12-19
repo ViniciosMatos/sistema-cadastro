@@ -26,7 +26,7 @@ namespace cadastro.Infrastructure.Repositories
 
         public async Task<Usuario> PostUsuarioAsync(Usuario usuario, CancellationToken ct)
         {
-            _context.Usuarios.Add(usuario);
+            await _context.Usuarios.AddAsync(usuario, ct);
             await _context.SaveChangesAsync(ct);
             return usuario;
         }
