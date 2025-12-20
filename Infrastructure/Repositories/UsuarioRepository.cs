@@ -24,6 +24,11 @@ namespace cadastro.Infrastructure.Repositories
             return await _context.Usuarios.FindAsync(new object[] { id }, ct);
         }
 
+        public async Task<Usuario> GetUsuarioByEmailAsync(string email, CancellationToken ct)
+        {
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email, ct);
+        }
+
         public async Task<Usuario> PostUsuarioAsync(Usuario usuario, CancellationToken ct)
         {
             await _context.Usuarios.AddAsync(usuario, ct);
@@ -39,13 +44,18 @@ namespace cadastro.Infrastructure.Repositories
 
         public async Task DeleteUsuarioAsync(Usuario usuario, CancellationToken ct)
         {
-            _context.Usuarios.Update(usuario);
+            _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync(ct);
         }
         
         public async Task SaveChangesAsync(CancellationToken ct)
         {
             await _context.SaveChangesAsync(ct);
+        }
+
+        public async Task<bool> EmailExistsAsync(string email, CancellationToken ct)
+        {
+            return await _context.Usuarios.AnyAsync(u => u.Email == email, ct);
         }
     }
 }
