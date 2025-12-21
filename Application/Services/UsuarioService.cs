@@ -84,8 +84,7 @@ namespace cadastro.Application.Services
         }
         public async Task<bool?> VerificarEmailExistenteAsync(string email, CancellationToken ct)
         {
-            var usuario = await _repo.EmailExistsAsync(email, ct);
-            if (usuario == null)
+            if (await _repo.EmailExistsAsync(email, ct))
                 return false;
             return true;
         }

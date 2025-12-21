@@ -53,7 +53,7 @@ namespace cadastro.Infrastructure.Repositories
             await _context.SaveChangesAsync(ct);
         }
 
-        public async Task<bool?> EmailExistsAsync(string email, CancellationToken ct)
+        public async Task<bool> EmailExistsAsync(string email, CancellationToken ct)
         {
             return await _context.Usuarios.AnyAsync(u => u.Email == email, ct);
         }
