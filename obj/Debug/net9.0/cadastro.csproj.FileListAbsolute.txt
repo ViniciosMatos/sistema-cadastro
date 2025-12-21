@@ -119,3 +119,4 @@ C:\Users\pichau\OneDrive\Desktop\backEnd\cadastro\obj\Debug\net9.0\refint\cadast
 C:\Users\pichau\OneDrive\Desktop\backEnd\cadastro\obj\Debug\net9.0\cadastro.pdb
 C:\Users\pichau\OneDrive\Desktop\backEnd\cadastro\obj\Debug\net9.0\cadastro.genruntimeconfig.cache
 C:\Users\pichau\OneDrive\Desktop\backEnd\cadastro\obj\Debug\net9.0\ref\cadastro.dll
+C:\Users\pichau\OneDrive\Desktop\backEnd\cadastro\bin\Debug\net9.0\FluentValidation.dll

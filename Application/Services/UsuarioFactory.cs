@@ -1,6 +1,5 @@
 using cadastro.Application.DTOs;
 using cadastro.Domain.Entities;
-using cadastro.Application.Services;
 
 namespace cadastro.Application.Services
 {
@@ -24,8 +23,6 @@ namespace cadastro.Application.Services
 
             if (string.IsNullOrWhiteSpace(dto.Email))
                 throw new ArgumentException("O email não pode estar vazio");
-            
-            if ()
 
             if (string.IsNullOrWhiteSpace(dto.Senha))
                 throw new ArgumentException("A senha não pode estar vazio");
@@ -49,7 +46,6 @@ namespace cadastro.Application.Services
             if (string.IsNullOrWhiteSpace(dto.Email))
                 throw new ArgumentException("O email não pode estar vazio");
             
-            UsuarioService
 
             if (string.IsNullOrWhiteSpace(dto.Senha))
                 throw new ArgumentException("A senha não pode estar vazio");

@@ -11,6 +11,6 @@ namespace cadastro.Application.Interfaces
         Task UpdateUsuarioAsync(Usuario usuario, CancellationToken ct);
         Task DeleteUsuarioAsync(Usuario usuario, CancellationToken ct);
         Task SaveChangesAsync(CancellationToken ct);
-        Task<bool> EmailExistsAsync(string email, CancellationToken ct);
+        Task<bool?> EmailExistsAsync(string email, CancellationToken ct);
     }
 }
