@@ -5,9 +5,17 @@
 ## Ferramentas Utilizadas
   - .NET 9.0
   - Entity Framework Core
-  - PostgreSQL
+  - FluentValidation
+  - SQLite
 
-A decisão de utilizar Postgre como Banco de Dados se deve ao fato que o mesmo tem integração com a plataforma 'render.com', permitindo que o banco fique online.
+Anteriormente, o Banco de Dados utilizado seria PostgreSQL, porém com andamento do projeto, ele se tornou complexo. E, como o objetivo deste projeto é estudar a API (e quem sabe o relacionamento entre entidades dentro dela), resolvi utilizar SQLite, um banco mais simples de ser implementado no ASP.NET, com desenvolvimento local e praticamente nenhuma conversão ao longo do desenvolvimento.
 
+
+## Conhecimentos Obtidos
+  Criação da Controller
+      Minhas APIs criadas anteriormente forma feitas com Minimal APIs, toda a função da controller era passada para o `Program.cs`. 
+
+
+PRECISA ARRUMAR A REQUISIÇÃO PATCH
 
 ###### (ESTE DOCUMENTO ESRÁ ATUALIZADO CONFORME O ANDAMENTO DO PROJETO)

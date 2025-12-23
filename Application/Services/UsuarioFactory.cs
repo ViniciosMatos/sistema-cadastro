@@ -7,7 +7,8 @@ namespace cadastro.Application.Services
     {
         public static UsuarioReadDto? ToReadDto(Usuario usuario)
         {
-            if (usuario == null) return null;
+            if (usuario == null) 
+                throw new InvalidOperationException("Usuário não encontrado.");
 
             return new UsuarioReadDto(
                 Id: usuario.Id,
@@ -37,8 +38,8 @@ namespace cadastro.Application.Services
 
         public static Usuario Put(UsuarioUpdateDto dto, Usuario usuario)
         {
-            if (usuario == null)
-                return null;
+            if (usuario == null) 
+                throw new InvalidOperationException("Usuário não encontrado.");
                 
             if (string.IsNullOrWhiteSpace(dto.Nome))
                 throw new ArgumentException("O nome não pode estar vazio");
@@ -59,7 +60,8 @@ namespace cadastro.Application.Services
 
         public static Usuario Patch(UsuarioUpdateDto dto, Usuario usuario)
         {
-            if (usuario == null) return null;
+            if (usuario == null) 
+                throw new InvalidOperationException("Usuário não encontrado.");
 
             if (!string.IsNullOrWhiteSpace(dto.Nome))
                 usuario.Nome = dto.Nome;
