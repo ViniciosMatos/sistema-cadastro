@@ -43,7 +43,7 @@ namespace cadastro.Application.Services
             if (usuario == null)
                 throw new InvalidOperationException("Erro ao criar usuário.");
 
-            if (await _repo.EmailExistsAsync(usuario.Email, ct))
+            if (await VerificarEmailExistenteAsync(usuario.Email, ct))
                 throw new ArgumentException("O email já está sendo usado por outro usuario.");
 
             await _repo.PostUsuarioAsync(usuario, ct);
@@ -59,7 +59,7 @@ namespace cadastro.Application.Services
 
             var atualizarUsuario = UsuarioFactory.Put(dto, usuario);
 
-            if (await _repo.EmailExistsAsync(usuario.Email, ct) && atualizarUsuario.Email != usuario.Email)
+            if (await VerificarEmailExistenteAsync(atualizarUsuario.Email, ct) && atualizarUsuario.Email != usuario.Email)
                 throw new ArgumentException("O email já está sendo usado por outro usuario.");
 
             await _repo.UpdateUsuarioAsync(atualizarUsuario, ct);
@@ -87,7 +87,7 @@ namespace cadastro.Application.Services
             return true;
 
         }
-        public async Task<bool?> VerificarEmailExistenteAsync(string email, CancellationToken ct)
+        public async Task<bool> VerificarEmailExistenteAsync(string email, CancellationToken ct)
         {
             if (await _repo.EmailExistsAsync(email, ct))
                 return false;

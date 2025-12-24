@@ -12,7 +12,7 @@ namespace cadastro.Application.Interfaces
         Task AtualizarUsuarioAsync(int id, UsuarioUpdateDto dto, CancellationToken ct);
         Task AtualizarParcialUsuarioAsync(int id, UsuarioUpdateDto dto, CancellationToken ct);
         Task<bool> DeletarUsuarioAsync(int id, CancellationToken ct);
-        Task<bool?> VerificarEmailExistenteAsync(string email, CancellationToken ct);
+        Task<bool> VerificarEmailExistenteAsync(string email, CancellationToken ct);
 
     }
 }
