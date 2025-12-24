@@ -21,7 +21,7 @@ namespace cadastro.Migrations
                     Email = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     Senha = table.Column<string>(type: "TEXT", maxLength: 32, nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    DataAtualizacao = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    DataAtualizacao = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
