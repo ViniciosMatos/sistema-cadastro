@@ -24,6 +24,6 @@ namespace cadastro.Domain.Entities
 
         public DateTime DataCriacao { get; set; } = DateTime.Now;
         
-        public DateTime DataAtualizacao { get; set; }
+        public DateTime? DataAtualizacao { get; set; }
     }
 }

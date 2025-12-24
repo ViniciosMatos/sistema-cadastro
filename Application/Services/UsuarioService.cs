@@ -20,7 +20,7 @@ namespace cadastro.Application.Services
         public async Task<UsuarioReadDto?> ObterUsuarioPorIdAsync(int id, CancellationToken ct)
         {
             var usuario = await _repo.GetUsuarioByIdAsync(id, ct);
-            if (usuario == null) 
+            if (usuario == null)
                 throw new InvalidOperationException("Usuário não encontrado.");
 
             var lerUsuario = UsuarioFactory.ToReadDto(usuario);
@@ -30,7 +30,7 @@ namespace cadastro.Application.Services
         public async Task<UsuarioReadDto?> ObterUsuarioPorEmailAsync(string email, CancellationToken ct)
         {
             var usuario = await _repo.GetUsuarioByEmailAsync(email, ct);
-            if (usuario == null) 
+            if (usuario == null)
                 throw new InvalidOperationException("Usuário não encontrado.");
 
             var lerUsuario = UsuarioFactory.ToReadDto(usuario);
@@ -40,7 +40,7 @@ namespace cadastro.Application.Services
         public async Task<Usuario> CriarUsuarioAsync(UsuarioCreateDto dto, CancellationToken ct)
         {
             var usuario = UsuarioFactory.Criar(dto);
-            if (usuario == null) 
+            if (usuario == null)
                 throw new InvalidOperationException("Erro ao criar usuário.");
 
             if (await _repo.EmailExistsAsync(usuario.Email, ct))
@@ -50,12 +50,12 @@ namespace cadastro.Application.Services
             await _repo.SaveChangesAsync(ct);
             return usuario;
         }
-        
+
         public async Task AtualizarUsuarioAsync(int id, UsuarioUpdateDto dto, CancellationToken ct)
         {
             var usuario = await _repo.GetUsuarioByIdAsync(id, ct);
             if (usuario == null)
-                throw new InvalidOperationException("Usuário não encontrado."); 
+                throw new InvalidOperationException("Usuário não encontrado.");
 
             var atualizarUsuario = UsuarioFactory.Put(dto, usuario);
 
@@ -67,29 +67,25 @@ namespace cadastro.Application.Services
         }
         public async Task AtualizarParcialUsuarioAsync(int id, UsuarioUpdateDto dto, CancellationToken ct)
         {
-            var usuario = await _repo.GetUsuarioByIdAsync(id, ct);
-            if (usuario == null)
+            var usuarioEncontrado = await _repo.GetUsuarioByIdAsync(id, ct);
+            if (usuarioEncontrado == null)
                 throw new InvalidOperationException("Usuário não encontrado.");
+            var usuarioAtualizado = await UsuarioFactory.Patch(_repo , dto, usuarioEncontrado, ct);
 
-            var atualizarUsuario = UsuarioFactory.Patch(dto, usuario);
-
-            if (await _repo.EmailExistsAsync(usuario.Email, ct) && atualizarUsuario.Email != usuario.Email)
-                throw new ArgumentException("O email já está sendo usado por outro usuario.");
-            
-            await _repo.UpdateUsuarioAsync(atualizarUsuario, ct);
+            await _repo.UpdateUsuarioAsync(usuarioAtualizado, ct);
             await _repo.SaveChangesAsync(ct);
         }
         public async Task<bool> DeletarUsuarioAsync(int id, CancellationToken ct)
         {
             var usuario = await _repo.GetUsuarioByIdAsync(id, ct);
-            if (usuario == null) 
+            if (usuario == null)
                 throw new InvalidOperationException("Usuário não encontrado.");
-            
+
             await _repo.DeleteUsuarioAsync(usuario, ct);
             await _repo.SaveChangesAsync(ct);
 
             return true;
-            
+
         }
         public async Task<bool?> VerificarEmailExistenteAsync(string email, CancellationToken ct)
         {
