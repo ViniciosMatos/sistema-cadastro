@@ -266,3 +266,8 @@ C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\stati
 C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\cadastro.csproj.Up2Date
 C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\cadastro.genruntimeconfig.cache
 C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\ref\cadastro.dll
+C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\bin\Debug\net9.0\cadastro.staticwebassets.runtime.json
+C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\compressed\j3x4tm2aee-icv2x5ldem.gz
+C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\compressed\bdnmr4d9xt-or9f7zl4y1.gz
+C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\compressed\q9614owyu2-4l0ryddyda.gz
+C:\Users\pichau\OneDrive\Desktop\backEnd\sistema-cadastro\obj\Debug\net9.0\compressed\jh4v9pjja3-74sery2hh7.gz
